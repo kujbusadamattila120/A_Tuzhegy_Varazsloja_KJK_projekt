@@ -22,3 +22,7 @@ let jatekosAdatok = {
     szerencse: 9,
     aktualisFejezet: 1
 };
+
+let szovegDoboz = document.getElementById('story-text');
+let gombokDoboz = document.getElementById('choices-container');
+let eleteroKijelzo = document.getElementById('hp');
