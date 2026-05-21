@@ -26,3 +26,12 @@ let jatekosAdatok = {
 let szovegDoboz = document.getElementById('story-text');
 let gombokDoboz = document.getElementById('choices-container');
 let eleteroKijelzo = document.getElementById('hp');
+function oldalFrissites() {
+    
+    let aktualisNode = storyNodes[jatekosAdatok.aktualisFejezet];
+
+    szovegDoboz.innerText = aktualisNode.text;
+    eleteroKijelzo.innerText = jatekosAdatok.eletero;
+
+    gombokDoboz.innerHTML = '';
+}
