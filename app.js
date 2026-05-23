@@ -41,4 +41,11 @@ function oldalFrissites() {
         oldalFrissites(); 
     };
     gombokDoboz.appendChild(gomb1);
+    let gomb2 = document.createElement('button');
+    gomb2.innerText = aktualisNode.gomb2_szoveg;
+    gomb2.onclick = function() {
+        jatekosAdatok.aktualisFejezet = aktualisNode.gomb2_hova;
+        oldalFrissites();
+    };
+    gombokDoboz.appendChild(gomb2);
 }
