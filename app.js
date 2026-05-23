@@ -34,4 +34,11 @@ function oldalFrissites() {
     eleteroKijelzo.innerText = jatekosAdatok.eletero;
 
     gombokDoboz.innerHTML = '';
+    let gomb1 = document.createElement('button');
+    gomb1.innerText = aktualisNode.gomb1_szoveg;
+    gomb1.onclick = function() {
+        jatekosAdatok.aktualisFejezet = aktualisNode.gomb1_hova;
+        oldalFrissites(); 
+    };
+    gombokDoboz.appendChild(gomb1);
 }
