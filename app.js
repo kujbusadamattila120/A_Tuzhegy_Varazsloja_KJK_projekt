@@ -83,11 +83,24 @@ function oldalFrissites() {
     localStorage.setItem('kjk_mentes', JSON.stringify(jatekosAdatok));
 }
 
-
 //mentes
 let mentes = localStorage.getItem('kjk_mentes');
 if (mentes) {
     jatekosAdatok = JSON.parse(mentes);
-
 }
+
+
 oldalFrissites();
+
+
+//ujrainditas
+document.getElementById('restart-btn').onclick = function() {
+ 
+    localStorage.removeItem('kjk_mentes');
+
+    jatekosAdatok.eletero = 20;
+    jatekosAdatok.szerencse = 9;
+    jatekosAdatok.aktualisFejezet = 1;
+
+    oldalFrissites();
+};
