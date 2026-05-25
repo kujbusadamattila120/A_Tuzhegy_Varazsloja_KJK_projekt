@@ -80,4 +80,14 @@ function oldalFrissites() {
         oldalFrissites();
     };
     gombokDoboz.appendChild(gomb2);
+    localStorage.setItem('kjk_mentes', JSON.stringify(jatekosAdatok));
 }
+
+
+//mentes
+let mentes = localStorage.getItem('kjk_mentes');
+if (mentes) {
+    jatekosAdatok = JSON.parse(mentes);
+
+}
+oldalFrissites();
