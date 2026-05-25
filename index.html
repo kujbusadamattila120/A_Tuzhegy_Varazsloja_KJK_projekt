@@ -1,33 +1,49 @@
 <!DOCTYPE html>
 <html lang="hu">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>A Tuzhegy Varazsloja - KJK</title>
-    <link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>A Tuzhegy Varazsloja</title>
+
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <div class="container">
-        <header>
-            <h1>A Tuzhegy Varazsloja</h1>
-            <div class="stats">
-                <p>Eletero: <span id="hp">20</span>/20</p>
-                <p>Szerencse: <span id="luck">9</span></p>
-            </div>
-        </header>
 
-        <main>
-            <div id="story-container">
-                <p id="story-text">Betoltes...</p>
-            </div>
-            <div id="choices-container">
-                </div>
-        </main>
+<div class="container">
 
-        <footer>
-            <button id="restart-btn">Jatek ujrainditasa</button>
-        </footer>
+  <header>
+    <h1>A Tuzhegy Varazsloja</h1>
+
+    <div class="stats">
+      <p>HP: <span id="hp">20</span></p>
+      <p>Szerencse: <span id="luck">9</span></p>
     </div>
-    <script src="app.js"></script>
+
+    <div class="inventory">
+      Inventory:
+      <span id="inventory">Ures</span>
+    </div>
+  </header>
+
+  <main>
+
+    <img id="chapter-image" src="" alt="kep">
+
+    <div id="story-container">
+      <p id="story-text"></p>
+    </div>
+
+    <div id="choices-container"></div>
+
+  </main>
+
+  <footer>
+    <button id="restart-btn">Uj jatek</button>
+  </footer>
+
+</div>
+
+<script src="app.js"></script>
+
 </body>
 </html>
