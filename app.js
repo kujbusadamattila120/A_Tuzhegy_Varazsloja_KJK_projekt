@@ -1,64 +1,64 @@
 const storyNodes = {
   1: {
-    text: "A barlang bejaratanal allsz.",
+    text: "A barlang bejáratánal állsz.",
     image: "images/cave.jpg",
     choices: [
       {
-        text: "Bemesz a barlangba",
+        text: "Bemész a barlangba",
         next: 2
       },
       {
-        text: "Hazamesz",
+        text: "Hazamész",
         next: 3
       }
     ]
   },
 
   2: {
-    text: "Egy ork jelenik meg elotted.",
+    text: "Egy ork jelenik meg előtted.",
     image: "images/ork.jpg",
     enemy: true,
     choices: [
       {
-        text: "Tamadas",
+        text: "Támadás",
         next: 4
       },
       {
-        text: "Menekules",
+        text: "Meneküles",
         next: 1
       }
     ]
   },
 
   3: {
-    text: "Hazamentel. Vege a jateknak.",
+    text: "Hazamentél. Vege a jatéknak.",
     image: "images/end.jpg",
     choices: [
       {
-        text: "Ujrakezdes",
+        text: "Ujrakezdés",
         next: 1
       }
     ]
   },
 
   4: {
-    text: "Legyozted az orkot es talaltal egy kardot.",
+    text: "Legyőzted az orkot es találtál egy kardot.",
     image: "images/treasure.jpg",
-    item: "Rozsdas Kard",
+    item: "Rozsdás Kard",
     choices: [
       {
-        text: "Tovabb",
+        text: "Tovább",
         next: 5
       }
     ]
   },
 
   5: {
-    text: "Megtalaltad a kincset. Gyoztel!",
+    text: "Megtaláltad a kincset. Győztel!",
     image: "images/win.jpg",
     choices: [
       {
-        text: "Uj jatek",
+        text: "Új játék",
         next: 1
       }
     ]
@@ -102,7 +102,7 @@ function updateGame() {
   luckText.innerText = player.luck;
 
   if (player.inventory.length === 0) {
-    inventoryText.innerText = "Ures";
+    inventoryText.innerText = "Üres";
   } else {
     inventoryText.innerText = player.inventory.join(", ");
   }
@@ -122,20 +122,20 @@ function updateGame() {
 
     button.onclick = function () {
 
-      if (current.enemy && choice.text === "Tamadas") {
+      if (current.enemy && choice.text === "Támadas") {
 
         let enemyPower = Math.floor(Math.random() * 6) + 1;
         let playerPower = Math.floor(Math.random() * 6) + 3;
 
         if (playerPower >= enemyPower) {
-          alert("Legyozted az orkot!");
+          alert("Legyőzted az orkot!");
         } else {
           player.hp -= 5;
 
-          alert("Megsebesultel!");
+          alert("Megsebesültél!");
 
           if (player.hp <= 0) {
-            alert("Meghaltal!");
+            alert("Meghaltál!");
 
             restartGame();
             return;
