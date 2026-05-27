@@ -1,49 +1,47 @@
 <!DOCTYPE html>
 <html lang="hu">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>A Tuzhegy Varazsloja</title>
-
-  <link rel="stylesheet" href="style.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>A Tűzhegy Varázslója</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-<div class="container">
-
-  <header>
-    <h1>A Tűzhegy Varazslója</h1>
-
-    <div class="stats">
-      <p>HP: <span id="hp">20</span></p>
-      <p>Szerencse: <span id="luck">9</span></p>
+<div id="game-container">
+    <div class="stats-bar">
+        <div class="stat">Ügyesség: <span id="skill-val">0</span></div>
+        <div class="stat">Életerő: <span id="stamina-val">0</span></div>
+        <div class="stat">Szerencse: <span id="luck-val">0</span></div>
     </div>
 
-    <div class="inventory">
-      Inventory:
-      <span id="inventory">Üres</span>
+    <div id="combat-ui" class="fade-in">
+        <div class="combat-grid">
+            <div class="fighter">
+                <div class="label">Te Támadóerőd</div>
+                <div id="player-attack-val" class="attack-power">?</div>
+                <div id="player-dice" class="dice-area"></div>
+            </div>
+            <div style="font-size: 2em; color: var(--accent-color);">VS</div>
+            <div class="fighter">
+                <div class="label" id="monster-name-label">Ellenség</div>
+                <div id="monster-attack-val" class="attack-power">?</div>
+                <div id="monster-dice" class="dice-area"></div>
+            </div>
+        </div>
+        <p id="round-result" style="font-size: 1.2em; margin: 20px 0;"></p>
+        <div class="choices">
+            <button id="btn-attack" onclick="runCombatRound()">Támadás!</button>
+            <button id="btn-flee" onclick="flee()">Menekülés!</button>
+        </div>
     </div>
-  </header>
 
-  <main>
-
-    <img id="chapter-image" src="" alt="kep">
-
-    <div id="story-container">
-      <p id="story-text"></p>
+    <div id="story-content" class="fade-in">
+        <div id="story-text"></div>
+        <div id="choices-container" class="choices"></div>
     </div>
-
-    <div id="choices-container"></div>
-
-  </main>
-
-  <footer>
-    <button id="restart-btn">Új jatek</button>
-  </footer>
-
 </div>
 
-<script src="app.js"></script>
-
+<script src="script.js"></script>
 </body>
 </html>
